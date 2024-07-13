@@ -55,8 +55,9 @@ If the regexp pattern entered in the "✳︎RE-Builder✳︎" finds multiple mat
 ** Exporting the Regexp Pattern
 Once a desired regexp pattern is defined, there are two menu items that can be used to export (copy) it to the kill-ring for further use.
 
-- /(w) Interactive/ will copy the regexp to the kill-ring so that it can be yanked in an interactive command that requires a regexp (e.g. ~isearch-forward-regexp~).
-  - This should only be used when the regexp syntax is set to ~string~. 
+- /(w) Interactive/ will copy the regexp to the kill-ring so that it can be yanked in an interactive command that requires a regexp (e.g. ~query-replace-regexp~).
+  - This should only be used when the regexp syntax is set to ~string~.
+  - ❗️When yanking (typically ~C-y~) a regexp into an interactive prompt, you /must/ have the point/focus in the minibuffer prompt (typically via mouse). Otherwise the desired content can be altered with extra escaping.
 - /(c) Code/ will copy the regexp to the kill-ring so that it can be yanked into a Elisp code that requires a regexp argument.
 
 ** Regexp Syntax Help
