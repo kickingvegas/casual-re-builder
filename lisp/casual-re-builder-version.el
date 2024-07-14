@@ -22,7 +22,7 @@
 
 ;;; Code:
 
-(defconst casual-re-builder-version "0.1.0"
+(defconst casual-re-builder-version "1.0.0"
   "Casual RE-Builder Version.")
 
 (defun casual-re-builder-version ()
