@@ -1,3 +1,5 @@
+[[https://melpa.org/#/casual-re-builder][file:https://melpa.org/packages/casual-re-builder-badge.svg]]
+
 * Casual RE-Builder
 An opinionated [[https://github.com/magit/transient][Transient]]-based menu for [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html][RE-Builder]], a tool for building Emacs regular expressions (regexps).
 
@@ -22,7 +24,7 @@ Casual RE-Builder has been verified with the following configuration.
 As Casual RE-Builder is new, we are looking for early adopters! Your [[https://github.com/kickingvegas/casual-re-builder/discussions][feedback]] is welcome as it will likely impact Casual RE-Builder's evolution, particularly with regards to UI.
 
 * Install
-If installed via MELPA then add these lines to your Emacs initialization file with your binding of preference. 
+If installed via [[https://melpa.org/#/casual-re-builder][MELPA]] then add these lines to your Emacs initialization file with your binding of preference. 
 #+begin_src elisp :lexical no
   (require 'casual-re-builder) ;; optional
   (keymap-set reb-mode-map "C-o" #'casual-re-builder-tmenu)
