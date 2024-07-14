@@ -85,8 +85,6 @@ If a mouse is available, a menu item can be selected by moving the mouse cursor 
 
 Pressing the ~?~ key will toggle help for all the menu items. Press the key of interest to get help for it.
 
-Options such as ~--above~ and ~--below~ can be saved for future use by typing ~C-x C-s~.
-
 When a Transient menu is raised, a prefix argument (~C-u~) can be entered before selecting a menu item.
 
 * Development
