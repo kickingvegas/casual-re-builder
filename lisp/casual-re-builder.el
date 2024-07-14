@@ -55,7 +55,7 @@ function."
          (buf (string-trim-left buf "\""))
          (buf (string-trim-right buf "\""))
          (buf (replace-regexp-in-string (rx "\\" (group anything)) "\\1" buf)))
-    (message (format "Copied %s to kill-ring" buf))
+    (message "Copied %s to kill-ring" buf)
     (kill-new buf)))
 
 (defun casual-re-builder-regexp-info ()
