@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-re-builder
 ;; Keywords: tools
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -55,7 +55,7 @@ function."
          (buf (string-trim-left buf "\""))
          (buf (string-trim-right buf "\""))
          (buf (replace-regexp-in-string (rx "\\" (group anything)) "\\1" buf)))
-    (message (format "Copied %s to kill-ring" buf))
+    (message "Copied %s to kill-ring" buf)
     (kill-new buf)))
 
 (defun casual-re-builder-regexp-info ()
