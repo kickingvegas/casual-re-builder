@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; Casual RE-Builder is an opinionated Transient-based porcelain for Emacs Re-Builder.
+;; Casual RE-Builder is an opinionated Transient-based porcelain for Emacs RE-Builder.
 
 ;; INSTALLATION
 ;; (require 'casual-re-builder) ;; optional
