@@ -58,9 +58,14 @@ If the regexp pattern entered in the "✳︎RE-Builder✳︎" finds multiple mat
 Once a desired regexp pattern is defined, there are two menu items that can be used to export (copy) it to the kill-ring for further use.
 
 - /(w) Interactive/ will copy the regexp to the kill-ring so that it can be yanked in an interactive command that requires a regexp (e.g. ~query-replace-regexp~).
-  - This should only be used when the regexp syntax is set to ~string~.
+  - This can only be used when the regexp syntax is set to ~string~.
   - ❗️When yanking (typically ~C-y~) a regexp into an interactive prompt, you /must/ have the point/focus in the minibuffer prompt (typically via mouse). Otherwise the desired content can be altered with extra escaping.
 - /(c) Code/ will copy the regexp to the kill-ring so that it can be yanked into a Elisp code that requires a regexp argument.
+- /(g) Interactive grep/ will copy the regexp so that it can be used with command that take a GNU grep regex argument.
+  - Example commands that do this are ~dired-do-find-regexp~ and ~dired-do-find-regexp-and-replace~.
+  - This command presumes that you have GNU grep installed and configured for use by Emacs.
+  - ❗️At current this is an experimental feature. The regexp exported from RE-Builder may not work. If so please report an [[https://github.com/kickingvegas/casual-re-builder/issues][issue]] describing the desired regexp and the target text.
+  - This can only be used when the regexp syntax is set to ~string~.    
 
 ** Regexp Syntax Help
 The menu item /(i)/ will invoke the Info page for regexp syntax with respect to the current syntax type.

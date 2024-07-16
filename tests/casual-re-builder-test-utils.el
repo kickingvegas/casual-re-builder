@@ -30,7 +30,8 @@
 
 (defun casualt-setup ()
   "Casual menu test setup function."
-  (re-builder))
+  (re-builder)
+  (setq reb-re-syntax 'string))
 
 (defun casualt-breakdown (&optional clear)
   "Casual menu test breakdown function, if CLEAR is non-nil then clear state."

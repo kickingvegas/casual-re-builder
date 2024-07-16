@@ -31,42 +31,12 @@
 ;; (keymap-set reb-lisp-mode-map "C-o" #'casual-re-builder-tmenu)
 
 ;;; Code:
-(require 'simple)
 (require 're-builder)
 (require 'rx)
 (require 'transient)
 (require 'casual-lib)
 (require 'casual-re-builder-utils)
 (require 'casual-re-builder-settings)
-
-(defun casual-re-builder-copy ()
-  "Reformat `reb-copy' result for interactive use.
-
-The implementation of `reb-copy' presumes that its result will be
-used in Elisp code and as such escapes certain characters.
-
-Often it is desired to instead use the regexp in an interactive
-function such as `query-replace-regexp'. Such functions require
-that the regexp not be escaped, which motivates the need for this
-function."
-  (interactive)
-  (reb-copy)
-  (let* ((buf (pop kill-ring))
-         (buf (string-trim-left buf "\""))
-         (buf (string-trim-right buf "\""))
-         (buf (replace-regexp-in-string (rx "\\" (group anything)) "\\1" buf)))
-    (message "Copied %s to kill-ring" buf)
-    (kill-new buf)))
-
-(defun casual-re-builder-regexp-info ()
-  "Get Info for syntax of regexps."
-  (interactive)
-  (info "(elisp) Syntax of Regexps"))
-
-(defun casual-re-builder-rx-info ()
-  "Get Info for Rx notation."
-  (interactive)
-  (info "(elisp) Rx Notation"))
 
 ;;;###autoload (autoload 'casual-re-builder-tmenu "casual-re-builder" nil t)
 (transient-define-prefix casual-re-builder-tmenu ()
@@ -82,7 +52,10 @@ regexp interactively.
    :description (lambda () (format "RE-Builder (%s)" reb-target-buffer))
    ["Copy Regexp"
     ("w" "Interactive" casual-re-builder-copy
-     :if-not (lambda () (derived-mode-p 'reb-lisp-mode))
+     :if casual-re-builder-interactive-export-p
+     :transient t)
+    ("g" "Interactive grep" casual-re-builder-grep-copy
+     :if casual-re-builder-interactive-export-p
      :transient t)
     ("c" "Code" reb-copy :transient t)]
 

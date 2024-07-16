@@ -36,5 +36,45 @@
     (should (string-equal (casual-re-builder-unicode-get :previous) "↑"))
     (should (string-equal (casual-re-builder-unicode-get :next) "↓"))))
 
+;;; Interactive test vectors
+
+;; Unfortunately, Elisp does not support raw strings, making it problematic to
+;; write a unit test that actually works with a string intended to be entered
+;; interactively as the escape character is processed (e.g. '\').
+
+;; In lieu of that are test strings that are intended to be entered directly
+;; into `re-builder' for manual testing of
+;; `casual-re-builder--re-elisp-to-interactive' and
+;; `casual-re-builder--re-elisp-to-grep-interactive'.
+
+;; Test:
+;; ("m" "This is something" ayo
+;; ("w" "Interactive" casual-re-builder-copy
+;; "(\(\"[[:alpha:]-]*\"\)[[:blank:]]*\(\"[[:graph:][:blank:]]*\"\)[[:blank:]]*\([[:graph:]]*\)"
+
+;; 03:29:18
+;; 14:29:24
+;; "\([[:digit:]]\{2\}\):\([[:digit:]]\{2\}\):\([[:digit:]]\{2\}\)"
+
+
+;; kickingvegas@gmail.com
+;; cyj9h@virginia.edu
+;; hallo@bingsu.org
+;; "\([[:alpha:]]*@[[:alpha:]\.]*.\(com\|org\|edu\)\)"
+
+;;!!!: Abandoned test due to lack of raw string support.
+;; (ert-deftest test-casual-re-builder--re-elisp-to-interactive ()
+;;   (let ((test-vectors (list
+;;                         (list
+;;                          "(\\(\\\"[[:alpha:]-]*\\\"\\)[[:blank:]]*\\(\\\"[[:graph:][:blank:]]*\\\"\\)[[:blank:]]*\\([[:graph:]]*\\)"
+;;                          "((\"[[:alpha:]-]*\")[[:blank:]]*(\"[[:graph:][:blank:]]*\")[[:blank:]]*([[:graph:]]*)")
+;;                        )))
+
+;;     (mapc (lambda (x)
+;;             (let ((test (casual-re-builder--re-elisp-to-interactive (nth 0 x)))
+;;                   (control (nth 1 x)))
+;;               (should (string-equal test control))))
+;;           test-vectors)))
+
 (provide 'test-casual-re-builder-utils)
 ;;; test-casual-re-builder-utils.el ends here
