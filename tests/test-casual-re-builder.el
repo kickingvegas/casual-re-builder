@@ -33,6 +33,7 @@
   (casualt-setup)
   (let ((test-vectors (list)))
     (push (casualt-suffix-test-vector "w" #'casual-re-builder-copy) test-vectors)
+    (push (casualt-suffix-test-vector "g" #'casual-re-builder-grep-copy) test-vectors)
     (push (casualt-suffix-test-vector "c" #'reb-copy) test-vectors)
     (push (casualt-suffix-test-vector "p" #'reb-prev-match) test-vectors)
     (push (casualt-suffix-test-vector "n" #'reb-next-match) test-vectors)
