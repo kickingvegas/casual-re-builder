@@ -31,13 +31,18 @@ If installed via [[https://melpa.org/#/casual-re-builder][MELPA]] then add these
   (keymap-set reb-lisp-mode-map "C-o" #'casual-re-builder-tmenu)
 #+end_src
 
-If you use ~use-package~, here is the recipe for installing it.
+If you use ~use-package~, here is the recipe for installing and configuring it. 
 #+begin_src elisp :lexical no
-  (require 're-builder)
+  (use-package re-builder
+    :defer t)
+
   (use-package casual-re-builder
     :ensure t
-    :bind (:map reb-mode-map
-                ("C-o" . casual-re-builder-tmenu)))
+    :bind (:map
+           reb-mode-map ("C-o" . casual-re-builder-tmenu)
+           :map
+           reb-lisp-mode-map ("C-o" . casual-re-builder-tmenu))
+    :after (re-builder))
 #+end_src
 
 

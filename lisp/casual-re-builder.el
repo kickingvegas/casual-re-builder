@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-re-builder
 ;; Keywords: tools
-;; Version: 1.1.0
+;; Version: 1.1.1
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -23,12 +23,23 @@
 
 ;;; Commentary:
 
-;; Casual RE-Builder is an opinionated Transient-based porcelain for Emacs RE-Builder.
+;; Casual RE-Builder is an opinionated Transient-based porcelain for the Emacs regular expression editor.
 
 ;; INSTALLATION
 ;; (require 'casual-re-builder) ;; optional
 ;; (keymap-set reb-mode-map "C-o" #'casual-re-builder-tmenu)
 ;; (keymap-set reb-lisp-mode-map "C-o" #'casual-re-builder-tmenu)
+
+;; Alternately with `use-package'
+;; (use-package re-builder
+;;   :defer t)
+;; (use-package casual-re-builder
+;;   :ensure t
+;;   :bind (:map
+;;          reb-mode-map ("C-o" . casual-re-builder-tmenu)
+;;          :map
+;;          reb-lisp-mode-map ("C-o" . casual-re-builder-tmenu))
+;;   :after (re-builder))
 
 ;;; Code:
 (require 're-builder)
