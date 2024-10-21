@@ -23,6 +23,12 @@
 
 ;;; Commentary:
 
+;; NOTICE
+;; This package `casual-re-builder' has been superseded by the package `casual'.
+;; Please update to the `casual' package from either MELPA or MELPA stable. Upon
+;; installation and upgrade of the `casual' package, this package will be
+;; removed.
+
 ;; Casual RE-Builder is an opinionated Transient-based porcelain for the Emacs regular expression editor.
 
 ;; INSTALLATION
@@ -54,6 +60,13 @@
 (require 'casual-lib)
 (require 'casual-re-builder-utils)
 (require 'casual-re-builder-settings)
+
+(display-warning
+ :warning
+ (concat
+  "NOTICE: "
+  "The package casual-re-builder has been superseded by the package casual. "
+  "Please upgrade to casual at your earliest convenience."))
 
 ;;;###autoload (autoload 'casual-re-builder-tmenu "casual-re-builder" nil t)
 (transient-define-prefix casual-re-builder-tmenu ()
