@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-re-builder
 ;; Keywords: tools
-;; Version: 1.1.3
+;; Version: 1.1.4-rc.1
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -22,6 +22,12 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; NOTICE
+;; This package `casual-re-builder' has been superseded by the package `casual'.
+;; Please update to the `casual' package from either MELPA or MELPA stable. Upon
+;; installation and upgrade of the `casual' package, this package will be
+;; removed.
 
 ;; Casual RE-Builder is an opinionated Transient-based porcelain for the Emacs regular expression editor.
 
@@ -54,6 +60,13 @@
 (require 'casual-lib)
 (require 'casual-re-builder-utils)
 (require 'casual-re-builder-settings)
+
+(display-warning
+ :warning
+ (concat
+  "NOTICE: "
+  "The package casual-re-builder has been superseded by the package casual. "
+  "Please upgrade to casual at your earliest convenience."))
 
 ;;;###autoload (autoload 'casual-re-builder-tmenu "casual-re-builder" nil t)
 (transient-define-prefix casual-re-builder-tmenu ()
